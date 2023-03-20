@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/c54527c30a.js" crossorigin="anonymous"></script>
+    <style>
+        #add{
+            width:90px;
+            margin-left: 10px;
+            height:40px ;
+            
+        }
+        #inputd{
+            width:350px;
+            height: 40px;
+        
+            margin-left: 35px;
+            border-radius: 7px;
+            border: solid blue 1px;
+        }
+        #sq{
+            height: 500px;
+            width: 600px;
+            border:solid black 1px;
+            margin-left:380px;
+            margin-top: 80px;
+            background-color: azure;
+            border-radius: 10px;
+            padding-top:30px;
+            
+        }
+        ul li{
+            width: 400px;
+            height: 40px;
+            background-color:darkseagreen;
+            margin-top: 15px;
+            cursor: pointer;
+            display: block;
+            position: relative;
+            text-align: left;
+            padding-left: 10px;
+        }
+        ul li span{
+            position: absolute;
+            top:0;
+            right:0;
+            width: 50px;
+            height: 40px;
+            text-align: center;
+            background-color: blue;
+            padding-top: 10px;
+        }
+       
+    </style>
+</head>
+<body style="background-color:rgb(101, 148, 132);">
+    <div class="container-fluid">
+       <div class="row" >
+           <div id="sq">
+                    <input type="text" id="inputd" class="class1" >
+             <button class="btn btn-primary" id="add" onclick="add()">ADD</button>
+             <br><br><br>
+             <ul id="ullist" style="list-style: none;" ></ul>
+           </div>
+        </div> 
+    </div>
+    <script> 
+    
+    function add(e)
+    {
+        let inputd=document.getElementById("inputd").value
+        let ul=document.getElementById("ullist") 
+        let newd=document.createElement("li")
+        let node=document.createTextNode(inputd)
+        newd.appendChild(node)
+        ullist.appendChild(newd)
+        let sp=document.createElement("span")
+        newd.appendChild(sp)
+        sp.textContent=`X`  
+
+        reset()   
+    }
+
+    function reset(){
+        document.getElementById("inputd").value=""
+    }
+
+    let ul=document.getElementById("ullist")
+    ul.addEventListener("click",(e)=>{
+        let h=e.target.parentNode
+        ul.removeChild(h) 
+    })  
+</script>
+</body>
+</html>
